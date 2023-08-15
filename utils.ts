@@ -1,4 +1,4 @@
-// restrict to number
+// restrict input to number
 export function restrictToNumber(val: string){
   return val.replace(/\D/g, '');
 }
@@ -14,4 +14,10 @@ export function handleMapClick (lnglat:any, token:string) {
   .catch(error => {
     console.error('Error fetching address:', error);
   });
+}
+
+// Number format 3 digits
+export function numberFormat (money: any)  {
+  let moneyDots = money.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+  console.log(moneyDots)
 }
