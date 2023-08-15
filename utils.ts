@@ -20,3 +20,9 @@ export function handleMapClick (lnglat:any, token:string) {
 export function numberFormat (money: any)  {
   return money.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
 }
+
+
+// Sum loop numbers
+export function calculateSum (items: any) {
+  return items.reduce((sum, item) => sum + parseFloat(item.price || 0), 0);
+}
