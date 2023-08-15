@@ -18,6 +18,5 @@ export function handleMapClick (lnglat:any, token:string) {
 
 // Number format 3 digits
 export function numberFormat (money: any)  {
-  let moneyDots = money.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
-  console.log(moneyDots)
+  return money.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
 }
