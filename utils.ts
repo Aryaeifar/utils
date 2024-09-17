@@ -26,3 +26,23 @@ export function numberFormat (money: any)  {
 export function calculateSum (items: any) {
   return items.reduce((sum, item) => sum + parseFloat(item.price || 0), 0);
 }
+
+// reach input length and jump next index
+
+export function focusNextInput(event) {
+  const input = event.target;
+  const maxLength = input.getAttribute("maxlength");
+
+  if (input.value.length >= maxLength) {
+    const form = input.form;
+    if (!form) return;
+
+    const inputs = Array.from(form.querySelectorAll("input"));
+    const currentIndex = inputs.indexOf(input);
+
+    if (currentIndex >= 0 && currentIndex < inputs.length - 1) {
+      const nextInput = inputs[currentIndex + 1];
+      nextInput.focus();
+    }
+  }
+}
